@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #1e2761;" stylesheets="@../css/custom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GA.SimpleDemoController">
+    <children>
+      <Label layoutX="288.0" layoutY="14.0" text="Genetic Algorithm" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXSlider fx:id="numberOfIndividuals" layoutX="151.0" layoutY="152.0" prefHeight="14.0" prefWidth="500.0" value="10.0" />
+      <Label layoutX="301.0" layoutY="120.0" text="Number of individual" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXSlider fx:id="numberOfGenes" layoutX="151.0" layoutY="219.0" prefHeight="14.0" prefWidth="500.0" value="5.0" />
+      <Label layoutX="326.0" layoutY="187.0" prefHeight="22.0" prefWidth="149.0" text="Number of genes" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="generator" buttonType="RAISED" layoutX="326.0" layoutY="261.0" prefHeight="40.0" prefWidth="150.0" ripplerFill="#7a2048" style="-fx-background-color: #408ec6;" text="Generate" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea fx:id="result" editable="false" focusColor="#7a2048" focusTraversable="false" layoutX="51.0" layoutY="328.0" prefHeight="250.0" prefWidth="700.0" promptText="Results . . ." style="-fx-background-color: #ddd;" unFocusColor="#408ec6" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="49.0">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font>
+      </JFXTextArea>
+      <Label fx:id="nbrIndividuals" alignment="CENTER" layoutX="513.0" layoutY="116.0" prefHeight="30.0" prefWidth="75.0" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbrGenes" alignment="CENTER" layoutX="486.0" layoutY="183.0" prefHeight="30.0" prefWidth="75.0" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbrGenes" alignment="CENTER" focusTraversable="false" layoutX="510.0" layoutY="117.0" prefHeight="30.0" prefWidth="50.0" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbrIndiv" alignment="CENTER" focusTraversable="false" layoutX="485.0" layoutY="183.0" prefHeight="30.0" prefWidth="50.0" textFill="#dddddd">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Label>
+    </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>
