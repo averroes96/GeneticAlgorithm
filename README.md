@@ -13,10 +13,6 @@ This repo focuses on :
 - adding usefull and nice customizable printouts  
 - going forward (I'try to add some more features I have in mind, relative to her genetic algorithm :) )  
   
-Example partial output when each individual has 50 genes :  
-  
-![with some small parameters](screenshots/result1.png)  
-  
 Example complete output when each individual has only 5 genes :  
   
 ![with some large parameters](screenshots/result2.png)
