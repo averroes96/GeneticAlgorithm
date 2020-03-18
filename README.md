@@ -15,7 +15,7 @@ This repo focuses on :
 
 ## averroes96 contribution :
 
-After reading [Ms Vijini Mallawaarachchi](https://github.com/Vini2)'s [article](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3), i came accross this optimized version to make it as the starting point to develop my study project which is about implementing a solution for SAT problem using genetic Algorithm using JAVA.
+After reading [Ms Vijini Mallawaarachchi](https://github.com/Vini2)'s [article](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3), i came accross this optimized version to make it as the starting point to develop my study project which is about implementing a solution for SAT problem using genetic Algorithm with Java.
 
 My contribution revolves around creating a simple GUI for Genetic Algorithms using :
 
