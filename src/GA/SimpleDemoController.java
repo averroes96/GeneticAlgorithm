@@ -15,6 +15,8 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXToggleButton;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -40,6 +42,8 @@ public class SimpleDemoController implements Initializable,Init {
     private int generationCount;
     private final SpecialAlert alert = new SpecialAlert();
     private static int nbrTries;
+    private Instant t1,t2;
+    private long elapsedTime;
 
 	//Selection
 	void selection() {
@@ -124,13 +128,15 @@ public class SimpleDemoController implements Initializable,Init {
 			geneticPool += "> Individual  "+increment+" | "+ individual.genesToString()+" |\n";
 			increment++;
 		}
-		geneticPool += "\n================================\n";
+		geneticPool += "\n===========================================\n";
                 
                 return geneticPool;
 	}    
 
     
         public void generateResults(){
+            
+        t1 = Instant.now();
             
         result.setText("");    
         
@@ -183,11 +189,9 @@ public class SimpleDemoController implements Initializable,Init {
 		}
                 
                 if(generationCount == (int)genSlider.getValue()){
-                    
-                    
-                    
+
                     if(nbrTries >= 10){
-                        alert.show(MAX_GEN_ERROR, MAX_GEN_ERROR_MESSAGE, Alert.AlertType.ERROR, false);
+                        alert.show(SOL_NOT_FOUND, SOL_NOT_FOUND_MESSAGE, Alert.AlertType.WARNING, false);
                         nbrTries = 0;
                     }
                     else
@@ -195,16 +199,24 @@ public class SimpleDemoController implements Initializable,Init {
                 }
                 else{
                     
-                    result.appendText("\n\n> Solution found in generation " + generationCount);
-                    result.appendText("\n> Index of winner Individual: "+population.getFittestIndex());
-                    result.appendText("\n> Fitness: "+population.getFittestScore());
-                    result.appendText("\n> Genes: ");
+                    t2 = Instant.now();
+                    
+                    String solution = "";
+                    
+                    solution += "\n> Solution found in generation " + generationCount ;
+                    solution += "\n> Index of winner Individual : " + population.getFittestIndex() ;
+                    solution += "\n> Fitness: " +population.getFittestScore() ;
+                    /*solution += "\n> Genes : " ;
 
                     for (int i = 0; i < numberOfGenes.getValue(); i++) {
-                            result.appendText(String.valueOf(population.selectFittest().getGenes()[i]));
+                            solution += String.valueOf(population.selectFittest().getGenes()[i]);
                     }
+                    */
+                    solution += "\n> Number of tries : " + nbrTries;
                     
-                    result.appendText("\n> Number of tries : " + nbrTries);
+                    elapsedTime = Duration.between(t1, t2).toMillis();
+                    
+                    alert.show(SOLUTION_FOUND, solution + "\n> Execution time = " + elapsedTime + " Ms" , Alert.AlertType.INFORMATION, false);
                     
                     nbrTries = 0;
                     
@@ -225,12 +237,16 @@ public class SimpleDemoController implements Initializable,Init {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        
+        
         initSlider(numberOfGenes, nbrGenes);
         initSlider(numberOfIndividuals, nbrIndividuals);
         initSlider(genSlider, genCount);      
             
         generator.setOnAction(Action -> {
+
             generateResults();
+
         });
         
     }    

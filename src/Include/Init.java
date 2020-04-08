@@ -11,8 +11,12 @@ package Include;
  */
 public interface Init {
     
-    String MAX_GEN_ERROR = "Maximum generations !";
+    String SOL_NOT_FOUND = "Solution wasn't found !";
     
-    String MAX_GEN_ERROR_MESSAGE = "The number of maximum generations specified was reached before finding a solution ! Try another set of parameters" ;
+    String SOL_NOT_FOUND_MESSAGE = "The maximu number of trieswas reached before finding a solution ! Try another set of parameters" ;
+    
+    String SOLUTION_FOUND = "Solution was found" ;
+    
+    String EXECUTION_TIME = "Execution time" ;
     
 }
