@@ -12,7 +12,24 @@ This repo focuses on :
 - Object Oriented Programming refactoring (if this work ins't done and she wants to continue improving her program, she'll find it harder to reuse the code if the structure is wobbly)  
 - adding usefull and nice customizable printouts  
 - going forward (I'try to add some more features I have in mind, relative to her genetic algorithm :) )  
-  
-Example complete output when each individual has only 5 genes :  
+
+## averroes96 contribution :
+
+After reading [Ms Vijini Mallawaarachchi](https://github.com/Vini2)'s [article](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3), i came accross this optimized version to make it as the starting point to develop my study project which is about implementing a solution for SAT problem using genetic Algorithm with Java.
+
+My contribution revolves around creating a simple GUI for Genetic Algorithms using :
+
+- javaFX
+- netbeans as IDE 
+- SceneBuilder to design my interface
+- [JFoenix](http://jfoenix.com/) library for material design 
+
+This interface is based on MVC modeling and offers the ability to specify :
+
+- Number of starting population
+- Number of genes per individual
+- Maximum number of generations
+- Showing the genetic poll for each individual - or not -
+- TextArea to print the generated results
   
 ![with some large parameters](screenshots/result2.png)
